@@ -43,7 +43,7 @@ jobs:
           distribution: zulu
 
       - name: Analyze with SonarCloud
-        run: ./mvnw verify || true jacoco:report sonar:sonar -B -Dsonar.projectKey=violetthe25th_jpetstore-6 -Dsonar.organization=VioletOrga -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dlicense.skip=true --no-transfer-progress
+        run: ./mvnw verify jacoco:report sonar:sonar -B -Dsonar.projectKey=VioletThe25th_jpetstore-6 -Dsonar.organization=VioletOrga -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN -Dlicense.skip=true --no-transfer-progress || true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
